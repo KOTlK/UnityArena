@@ -1,0 +1,16 @@
+{
+    "name": "Kotlk.UnityArena.Sample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1516c2f97c439444180bac39aea2224b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
