@@ -11,7 +11,7 @@ Make sure you have standalone git installed.
 
 ## Usage
 
-- Create Allocator instance (`new ArenaAllocator(long initialSizeInBytes)`).
+- Create Allocator instance (`new Arena(long initialSizeInBytes)`).
 - Allocate data using `T *Alloc<T>(uint count)` method.
 - - `count` Parameter means amount of items you want to have.
 - - `Alloc<int>(10)` means that you will get pointer to 10 integers, allocating totally `10 * 

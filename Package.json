@@ -1,6 +1,6 @@
 {
   "name": "com.kotlk.unityarena",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "UnityArena",
   "description": "Arena Allocator for Unity",
   "unity": "2021.3",
