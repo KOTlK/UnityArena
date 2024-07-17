@@ -9,13 +9,13 @@ public unsafe interface IAllocator : IDisposable {
         void Free<T>(T *ptr) where T : unmanaged;
 }
 
-public unsafe class ArenaAllocator : IAllocator {
+public unsafe struct Arena : IAllocator {
     public byte *Data;
 
     private ulong occupied;
     private ulong totalSize;
 
-    public ArenaAllocator(long size) {
+    public Arena(long size) {
 #if UNTIY_EDITOR
         Data = (byte*)MallocTracked(size, AlignOf<byte>(), Allocator.Persistent, 0);
 #endif
@@ -23,6 +23,7 @@ public unsafe class ArenaAllocator : IAllocator {
         Data = (byte*)Malloc(size, AlignOf<byte>(), Allocator.Persistent);
 #endif
         totalSize = (ulong)size;
+        occupied = 0;
     }
 
     public void Dispose() {
@@ -32,6 +33,8 @@ public unsafe class ArenaAllocator : IAllocator {
 #if !UNTIY_EDITOR
         UnsafeUtility.Free((void*)Data, Allocator.Persistent);
 #endif
+        totalSize = 0;
+        occupied  = 0;
     }
 
     public T *Alloc<T>(uint count) 

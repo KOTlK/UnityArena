@@ -2,13 +2,13 @@ using System.Text;
 using UnityEngine;
 
 public unsafe class AllocatorTest : MonoBehaviour {
-    public ArenaAllocator Allocator;
+    public Arena Allocator;
     
     private StringBuilder sb1 = new();
     private StringBuilder sb2 = new();
 
     private void Start() {
-        Allocator = new ArenaAllocator(1024);
+        Allocator = new Arena(1024);
 
         var ints = Allocator.Alloc<int>(128);
 
