@@ -39,7 +39,7 @@ public unsafe class AllocatorTest : MonoBehaviour {
 
         Debug.Log(sb1.ToString());
 
-        Allocator.FreeAll();
+        Allocator.Free();
 
         longs = Allocator.Alloc<long>(64);
 
